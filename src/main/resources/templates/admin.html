@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link th:href="@{css/admin.css}" href="../../static/css/admin.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+
+    <div class="container text-center">
+        <div>
+            <h1>Spring Boot File Upload & Download</h1>
+        </div>
+
+        </div>
+
+    <div class="add-delete-wrapper">
+        <div class="add-book">
+            <h3>Add Book</h3>
+            <div class="card" style="width: 18rem;" align="center">
+                <div class="card-body" align="center">
+                    <h2 class="card-title">File Upload</h2>
+                    <h6 class="text-success">[[${success}]]</h6>
+
+                    </div>
+                </div>
+            <form th:action="@{/upload-file}" method="post" enctype="multipart/form-data"
+                  th:object="${document}">
+
+
+
+                <input
+                        class="form-control" name="file" type="file" id="formFile"><br />
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+
+
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"/>
+                <td th:text="${student.name}"/>
+                <td th:text="${student.address}"/>
+                <td >
+                    <form th:action="@{delete}" method="post">
+                        <input type="hidden" name="id" th:value="${student.id}" />
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        </div>
+            <div class="container">
+
+                <div th:switch="${listfile}">
+                    <h2 th:case="null">No users yet!</h2>
+                    <div th:case="*">
+                        <h2>Users</h2>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>book  Name</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="user : ${listfile}">
+                                <td th:text="${user.name}"></td>
+
+                                <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><a href="/signup">Add a new user</a></p>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="add-delete-wrapper">
+        <div class="add-user">
+            <h3>Add User</h3>
+            <form id="addUserForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="email">password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+
+        <div class="delete-user">
+            <h3>Delete User</h3>
+            <form id="deleteUserForm">
+                <label for="userId">User ID:</label>
+                <input type="text" id="userId" name="userId" required>
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+    </div>
+
+
+<footer>
+    <p>&copy; 2023 Admin Page. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>

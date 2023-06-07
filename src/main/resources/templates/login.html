@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link th:href="@{css/login.css}" href="../../static/css/login.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+    <!-- <link rel="stylesheet" href="Book.css"> -->
+    <title>BOOKS HOME / LOGIN</title>
+    <link rel="icon" href="imgs/icon.webp">
+    <style>
+    body {
+      background-color: #ececec;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Start Form -->
+<section class="login-form">
+    <div class="form-holder">
+        <div class="overlay"></div>
+        <h1>BOOKS HOME</h1>
+        <div class="inputs">
+            <form
+                    method="post"
+                    role="form"
+                    th:action="@{/login}"
+                    class="form-horizontal"
+            >
+                <br/><br/>
+                <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        class="form-control"
+                        placeholder="Enter email address"
+                />
+                <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Enter password"
+                />
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary" >Submit</button>
+
+                </div>
+            </form>
+        </div>
+        <p class="pass"><a href="#">Forgot password?</a></p>
+    </div>
+    <div class="sign">
+        <div class="overlay"></div>
+        <p>Don't have an account? <a th:href="@{/register}">Register/Signup here</a>Sign up</a></p>
+    </div>
+</section>
+<!-- End Form -->
+
+<script src="JS/books.js"></script>
+</body>
+
+</html>

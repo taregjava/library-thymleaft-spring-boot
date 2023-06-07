@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="Book.css">
+    <title>e-book</title>
+    <link rel="icon" href="imgs/icon.webp">
+</head>
+<body>
+<div class="card">
+    <div class="title colored">
+        <h4>The Time</h4>
+        <p>ahmed zewail</p>
+    </div>
+    <div class="content">
+        <a th:href="@{/download_file}" target="_blank">download file from server</a>
+        <h4>ahmed zewail</h4>
+    </div>
+    <div class="content">
+        <a th:href="@{/download_document}" target="_blank">download file from database</a>
+        <h4>ahmed zewail</h4>
+    </div>
+    <div class="content">
+        <a th:href="@{/download_csv}" target="_blank">download file from database</a>
+        <h4>ahmed zewail</h4>
+    </div>
+    <!--<div class="stat">
+        <span><i class=" love fa-regular fa-heart"></i>30,500</span>
+        <span><i class=" download fa-solid fa-download"></i>17,000</span>
+    </div>-->
+</div>
+</body>
+</html>

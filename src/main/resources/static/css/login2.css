@@ -1,0 +1,258 @@
+
+:root {
+  --main-color: #ffffff;
+  --secondary-color: #AB6B51;
+  --primary-color: #2F435A;
+  --section-color: #f9f9f9;
+  --p-color: #666;
+  --main-transition: 0.3s;
+}
+
+/* Start login */
+section.login-form,
+section.signup-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+section.login-form .form-holder,
+section.signup-form .form-holder {
+  width: 350px;
+  height: 280px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-image: url(pic/p6.jpg);
+  /* ***** */
+  /* background-size: cover; */
+  background-size: 490px;
+  background-repeat: no-repeat;
+  background-position: left;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+section.login-form .form-holder .overlay,
+section.signup-form .form-holder .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+section.login-form .form-holder>h1,
+section.signup-form .form-holder>h1 {
+  color: var(--main-color);
+  letter-spacing: 1px;
+}
+
+section.login-form .form-holder .inputs,
+section.signup-form .form-holder .inputs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.login-form .form-holder .inputs input,
+section.signup-form .form-holder .inputs input {
+  border: none;
+  width: 70%;
+  height: 30px;
+  margin-top: 10px;
+  padding-left: 10px;
+  background: transparent;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border: 1px solid #ccc;
+  color: white;
+}
+
+section.login-form .form-holder .inputs input::placeholder,
+section.signup-form .form-holder .inputs input::placeholder {
+  color: #f8f8f8;
+  font-size: 12px;
+}
+
+section.login-form .form-holder .inputs button,
+section.signup-form .form-holder .inputs button {
+  margin-top: 15px;
+  width: 40%;
+  height: 30px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  cursor: pointer;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+section.login-form .form-holder .inputs button:hover,
+section.signup-form .form-holder .inputs button:hover {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+section.login-form .form-holder>p>a {
+  display: block;
+  margin-top: 30px;
+  color: #f2f2f2;
+  letter-spacing: 1px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+section.login-form .form-holder>p>a:hover {
+  color: var(--main-color);
+}
+
+section.login-form .sign,
+section.signup-form .log {
+  margin-top: 10px;
+  width: 350px;
+  height: 60px;
+  background-image: url(pic/p6.jpg);
+  /* **************** */
+  background-size:570px;
+  background-repeat: no-repeat;
+  background-position: left;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+section.login-form .sign .overlay,
+section.signup-form .log .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+section.login-form .sign p,
+section.signup-form .log p {
+  margin-top: 20px;
+  color: var(--main-color);
+}
+
+section.login-form .sign p>a,
+section.signup-form .log p>a {
+  margin-left: 8px;
+  color: var(--main-color);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+section.login-form .sign p>a:hover,
+section.signup-form .log p>a:hover {
+  color: #cecece;
+}
+
+/* End login */
+/* Start Sign up */
+section.signup-form .form-holder {
+  height: 370px;
+}
+
+section.signup-form .form-holder .substitute {
+  margin: 15px 0 0 0;
+}
+
+section.signup-form .form-holder .substitute>span {
+  color: var(--main-color);
+  font-weight: 500;
+  position: relative;
+}
+
+section.signup-form .form-holder .substitute>span::before,
+section.signup-form .form-holder .substitute>span::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  width: 40px;
+  height: 1px;
+  background-color: var(--main-color);
+}
+
+section.signup-form .form-holder .substitute>span::before {
+  left: 30px;
+}
+
+section.signup-form .form-holder .substitute>span::after {
+  right: 30px;
+}
+
+section.signup-form .form-holder .substitute>p {
+  margin: 10px 0;
+  color: var(--main-color);
+  letter-spacing: 1px;
+}
+
+section.signup-form .form-holder .substitute .social {
+  margin: 15px 0;
+}
+
+section.signup-form .form-holder .substitute .social a {
+  margin-left: 8px;
+  font-size: 17px;
+  color: var(--section-color);
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+
+section.signup-form .form-holder .substitute .social a.facebook:hover {
+  color: #054AB1;
+}
+
+section.signup-form .form-holder .substitute .social a.twitter:hover {
+  color: #0E8DEE;
+}
+
+section.signup-form .form-holder .substitute .social a.instagram:hover {
+  color: #C12254;
+}
+
+section.signup-form .form-holder .substitute .social a.linkedin:hover {
+  color: #044C7C;
+}
+
+/* End Sign up */

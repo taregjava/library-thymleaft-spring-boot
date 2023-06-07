@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link th:href="@{css/signup.css}" href="../../static/css/signup.css"
+          rel="stylesheet" type="text/css" media="screen"/>
+    <!-- <link rel="stylesheet" href="Book.css"> -->
+    <title>BOOKS HOME / SIGNUP</title>
+    <link rel="icon" href="imgs/icon.webp">
+    <style>
+    body {
+      background-color: #ececec;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Start Form -->
+<section class="signup-form">
+    <div class="form-holder">
+        <div class="overlay"></div>
+        <h1>BOOKS HOME</h1>
+        <div th:if="${param.success}">
+            <div class="alert alert-info">
+                You have successfully registered our app!
+            </div>
+        </div>
+        <div class="inputs">
+            <form
+                    method="post"
+                    role="form"
+                    th:action="@{/register/save}"
+                    th:object="${user}"
+            >
+
+                <input
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        placeholder="Enter mobile number"
+                        th:field="*{username}"
+                        type="text"
+                />
+                <p th:errors = "*{username}" class="text-danger"
+                   th:if="${#fields.hasErrors('username')}"></p>
+                <input
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Enter email address"
+                        th:field="*{email}"
+                        type="email"
+                />
+                <p th:errors = "*{email}" class="text-danger"
+                   th:if="${#fields.hasErrors('email')}"></p>
+                <input
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        th:field="*{password}"
+                        type="password"
+                />
+                <p th:errors = "*{password}" class="text-danger"
+                   th:if="${#fields.hasErrors('password')}"></p>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Register</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="substitute">
+            <span>OR</span>
+            <p>Log In With</p>
+            <div class="social">
+                <a class="facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a class="google" href="#"><i class="fa-brands fa-google"></i></a>
+                <a class="linkedin" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="log">
+        <div class="overlay"></div>
+        <p>Have an account?<a th:href="@{/login}">Login here</a></p>
+    </div>
+</section>
+<!-- End Form -->
+
+<script src="JS/books.js"></script>
+</body>
+
+</html>
